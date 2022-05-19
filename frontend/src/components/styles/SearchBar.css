@@ -1,0 +1,32 @@
+.search {
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid black;
+    border-right: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 5px 0 0 5px;
+}
+
+.searchTerm:focus {
+    outline: none;
+    transition: 0.5s;
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid black;
+    background: black;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+    padding-left: 7px;
+}
