@@ -16,7 +16,6 @@ function Products() {
   const totalPages = Math.ceil(totalProducts.length / productsPerPage);
   const showProducts = useSelector((state) => state.filteredProducts ? state.filteredProducts.slice(indexOfFirstPost, indexOfLastPost) : false);
 
-  // Pagination
   const previousPage = () => {
     if (currentPage === 1) return;
     setCurrentPage(currentPage - 1);
@@ -29,7 +28,6 @@ function Products() {
 
   if (currentPage > totalPages) previousPage();
 
-  // Clear State for Go Back button
   const clearHome = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     dispatch(clearState());
@@ -37,10 +35,10 @@ function Products() {
   
   if (!showProducts) {
   return (
-    <div className="container mt-10">
-      <h1>Error, please add a Product</h1>
+    <div className="mt-20">
+      <h1 className="container">Error, please add a Product</h1>
 
-      <div>
+      <div className="container">
         <Link to="/home" style={{ textDecoration: "none" }} onClick={clearHome}>
           <button className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded mt-10">Go Back</button>
         </Link>
